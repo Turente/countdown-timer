@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --gradient: linear-gradient(
+        to right bottom, 
+        rgb(0 89 203),
+        rgb(193 0 89)
+    );
+    --gradient_1: #dbd800;
+    --gradient_2: #00ff24;
+    --gradient_3: #fff;
+    --gradient_4: #1fb3c5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        to right bottom, 
+        rgb(45 41 102), 
+        rgb(16 14 44));
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+}
+
+.timer {
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: var(--gradient);
+    padding: 32px;
+    border-radius: 16px;
+    -webkit-box-shadow: 0px 0px 10px 2px rgb(4, 4, 12) inset;
+    -moz-box-shadow: 0px 0px 10px 2px rgb(4, 4, 12) inset;
+    box-shadow: 0px 0px 10px 2px rgb(4, 4, 12) inset;
+}
+.timer__title {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 32px;
+}
+.timer__box {
+    margin-top: 32px;
+}
+.timer__box:not(:last-child) {
+    margin-right: 16px;
+}
+.timer__item {
+    position: relative;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+}
+.timer__circle {
+    --size: 70px;
+    width: var(--size);
+    height: var(--size);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer__num {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1em;
+    background: linear-gradient(-125deg, var(--gradient_3), var(--gradient_4));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+.timer__name {
+    margin-top: 16px;
+    font-weight: 300;
+}
+
+
+
+/*circle*/
+
+.circle {
+    --offset: -10px;
+    position: absolute;
+    top: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    left: var(--offset);
+    transform: rotate(-90deg);
+}
+.segment {
+    fill: rgba(0, 0, 0, 0.3);
+    stroke: url(#gradient);
+    stroke-width: 1px;
+    stroke-dasharray: 60 60;
+    stroke-linecap: round;
+    transform: scale(4.7);
+    transform-origin: center;
+    transition: stroke-dasharray 1s linear;
+}
+.gradient_1 {
+    stop-color: var(--gradient_1);
+}
+.gradient_2 {
+    stop-color: var(--gradient_2);
+}
